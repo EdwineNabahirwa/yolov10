@@ -731,7 +731,6 @@ def torch_safe_load(weight):
             }
         ):  # for legacy 8.0 Classify and Pose models
             ckpt = torch.load(file, map_location="cuda" if torch.cuda.is_available() else "cpu", weights_only=False)
-)
 
     except ModuleNotFoundError as e:  # e.name is missing module name
         if e.name == "models":
